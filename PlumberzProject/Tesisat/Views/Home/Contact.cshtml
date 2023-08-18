@@ -1,0 +1,55 @@
+﻿@model DataAccessLayer.Entities.Contact
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_MenusLayout.cshtml";
+}
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="text-secondary text-uppercase">TEMASTA OLMAK</h6>
+                <h1 class="mb-4">Herhangi Bir Sorgu İçin İletişime Geçin</h1>
+                <p class="mb-4">Fikriniz bizim için önemli lütfen bizimle iletişime geçin en ufak bir sorunda bile.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d568.5807386521088!2d41.137161221711935!3d37.919739898156955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400b4676215808b5%3A0x93e53b951d0e612!2sG%C3%BCltepe%2C%2072070%20Batman%20Merkez%2FBatman!5e0!3m2!1str!2str!4v1691417295244!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="bg-light p-5 h-100 d-flex align-items-center">
+                    <form asp-action="Contact" method="post">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Name" type="text" class="form-control" placeholder="Adınız">
+                                    <label asp-for="Name" for="name">Adınız</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Mail" type="email" class="form-control"  placeholder="E-Posta">
+                                    <label asp-for="Mail" for="email">Mailiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input asp-for="Subject" type="text" class="form-control"  placeholder="Konu">
+                                    <label asp-for="Subject" for="subject">Konu</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea asp-for="Message" class="form-control" placeholder="Mesajınızı buraya yazınız."  style="height: 150px"></textarea>
+                                    <label asp-for="Message">Mesaj</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100 py-3" type="submit">Mesaj Gönder</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->

@@ -1,0 +1,10 @@
+﻿
+@model IEnumerable<DataAccessLayer.Entities.Team>
+@{
+    ViewData["Title"] = "Team";
+    Layout = "~/Views/Shared/_MenusLayout.cshtml";
+}
+
+@await Component.InvokeAsync("Team")
+
+

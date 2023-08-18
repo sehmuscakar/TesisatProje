@@ -1,0 +1,7 @@
+﻿@model IEnumerable<DataAccessLayer.Entities.Dtos.NavbarListDto>
+@{
+    ViewData["Title"] = "Navbar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("Navbar")

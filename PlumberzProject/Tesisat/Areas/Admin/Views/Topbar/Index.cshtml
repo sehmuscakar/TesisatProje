@@ -1,0 +1,98 @@
+﻿@model IEnumerable<DataAccessLayer.Entities.Dtos.AdminDtos.TopbarListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Üst Menü Liste Paneli </h1>
+
+<p>
+    <a class="btn btn-warning" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialMedya1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialMedya2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialMedya3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SocialMedya4)
+            </th>
+ 
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RowOrder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialMedya1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialMedya2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialMedya3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocialMedya4)
+            </td>
+      
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                    <hr>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

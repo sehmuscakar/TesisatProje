@@ -1,0 +1,72 @@
+﻿@model DataAccessLayer.Entities.About
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h4>Hakkımızda Güncelleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="@Model.CreatedBy" class="form-control" type="hidden" />
+            <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <input asp-for="@Model.IsActive" class="form-control" type="hidden" />
+            <div class="form-group">
+                <label asp-for="Header" class="control-label"></label>
+                <input asp-for="Header" class="form-control" />
+                <span asp-validation-for="Header" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceTitle1" class="control-label"></label>
+                <input asp-for="ServiceTitle1" class="form-control" />
+                <span asp-validation-for="ServiceTitle1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceTitle2" class="control-label"></label>
+                <input asp-for="ServiceTitle2" class="form-control" />
+                <span asp-validation-for="ServiceTitle2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ServiceTitle3" class="control-label"></label>
+                <input asp-for="ServiceTitle3" class="form-control" />
+                <span asp-validation-for="ServiceTitle3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="İmage1" class="control-label"></label>
+                <input asp-for="İmage1" class="form-control" type="file"/>
+                <span asp-validation-for="İmage1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="İmage2" class="control-label"></label>
+                <input asp-for="İmage2" class="form-control" type="file"/>
+                <span asp-validation-for="İmage2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Urgent" class="control-label"></label>
+                <input asp-for="Urgent" class="form-control" />
+                <span asp-validation-for="Urgent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+       <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>
+

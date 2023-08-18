@@ -1,0 +1,47 @@
+﻿@model DataAccessLayer.Entities.Fact
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h4>Hakikat(Toplam Sayılar) Ekleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="@Model.CreatedBy" class="form-control" type="hidden" />
+            <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <input asp-for="@Model.IsActive" class="form-control" type="hidden" />
+            <div class="form-group">
+                <label asp-for="YearsExperince" class="control-label"></label>
+                <input asp-for="YearsExperince" class="form-control" />
+                <span asp-validation-for="YearsExperince" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpertTechnicon" class="control-label"></label>
+                <input asp-for="ExpertTechnicon" class="form-control" />
+                <span asp-validation-for="ExpertTechnicon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PleasedCustomerr" class="control-label"></label>
+                <input asp-for="PleasedCustomerr" class="form-control" />
+                <span asp-validation-for="PleasedCustomerr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompletedProject" class="control-label"></label>
+                <input asp-for="CompletedProject" class="form-control" />
+                <span asp-validation-for="CompletedProject" class="text-danger"></span>
+            </div>
+   <br />
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>
+

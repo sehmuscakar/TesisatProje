@@ -1,0 +1,57 @@
+﻿@model DataAccessLayer.Entities.Team
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<h4>Takım Ekleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="@Model.CreatedBy" class="form-control" type="hidden" />
+            <input asp-for="@Model.RowOrder" class="form-control" type="hidden" />
+            <input asp-for="@Model.IsActive" class="form-control" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" type="file"/>
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Duty" class="control-label"></label>
+                <input asp-for="Duty" class="form-control" />
+                <span asp-validation-for="Duty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedya1" class="control-label"></label>
+                <input asp-for="SocialMedya1" class="form-control" />
+                <span asp-validation-for="SocialMedya1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedya2" class="control-label"></label>
+                <input asp-for="SocialMedya2" class="form-control" />
+                <span asp-validation-for="SocialMedya2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SocialMedya3" class="control-label"></label>
+                <input asp-for="SocialMedya3" class="form-control" />
+                <span asp-validation-for="SocialMedya3" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Ekle" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>

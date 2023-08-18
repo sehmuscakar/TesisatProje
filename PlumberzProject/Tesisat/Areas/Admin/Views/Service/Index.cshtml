@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DataAccessLayer.Entities.Dtos.AdminDtos.ServiceListDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hizmetler Liste Paneli</h1>
+
+<p>
+    <a class="btn btn-warning" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Header)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceTitle1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceTitle2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceTitle3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.İcon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastUpdateedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedFullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RowOrder)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceTitle1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceTitle2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceTitle3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.İcon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastUpdateedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedFullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RowOrder)
+            </td>
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                    <hr>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

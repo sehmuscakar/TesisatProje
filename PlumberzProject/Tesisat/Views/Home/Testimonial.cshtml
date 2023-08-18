@@ -1,0 +1,7 @@
+﻿@model IEnumerable<DataAccessLayer.Entities.Testimonial>
+@{
+    ViewData["Title"] = "Testimonial";
+    Layout = "~/Views/Shared/_MenusLayout.cshtml";
+}
+
+@await Component.InvokeAsync("Testimonial")
